@@ -1,0 +1,101 @@
+@import ./QOui.sass
+#container
+    display: none
+.btn
+    background-color: #2680eb
+    border: 0
+    padding: 10px
+    margin: 10px 
+    width: 100%
+    color: $colorBG
+    &.err 
+        color: $colorBG
+        background-color: red
+    &.no
+        color: #2680eb
+        background-color: $colorBG
+        @include sh 
+
+
+nav  
+    display: flex
+    background-color: $colorBG
+    flex-direction: row
+    width: 100%
+    height: 65px
+    top: 0
+    z-index: 1
+    position: absolute
+    @include sh 
+    .btn_menu
+        border-radius: 10px
+        padding: 3px
+        margin: 10px
+        width: 45px
+        height: 45px
+        background-color: $colorBG  
+    .logo
+        padding: 0 
+        height: 40px
+        margin: 13px 13px 13px 30px
+        width: 40px
+    #menu       
+        right: 0 
+        height: 100%
+        transition: width 0.5s
+        top: 75px   
+        background-color: $colorBG    
+        a 
+            p 
+                margin: 14px 0
+                font-size: large
+            img , svg
+                width: 30px
+                height: 30px
+    .search
+        width: 95%
+        margin: 10px 
+        border-radius: 10px 
+        border: 1px solid #efefef
+        left: 0px
+        right: 0
+        background-color: $colorBG
+        margin: 10px  
+        input
+            margin: 3px
+    .icon
+        padding: 10px
+        width:  40px
+        height: 40px
+    input
+        border: 0
+        padding: 10px
+        border-radius: 10px
+        width: 90%
+        &:focus
+            outline: 0
+
+    .btn_search 
+        padding: 14px 9px
+        margin: 10px
+        width: 45px
+        height: 45px  
+        flex-direction: column-reverse
+        img 
+            width: 20px
+            height: 20px
+     
+    .user
+        width: 30px
+        height: 30px
+        margin: 20px
+    .dashboard 
+        padding: 25px 
+        .btns
+            display: flex
+            width: 175px
+        button
+            margin: -10px 5px
+        .nav_menu_link 
+            padding:  10px
+            cursor: n-resize

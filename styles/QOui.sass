@@ -1,0 +1,32 @@
+@import url("/fonts/dubai.woff")
+$colorBG : #ffffff
+$colorUI: #2680eb 
+$colorUIX: #2b67e1 
+$colorUIM: #91c8ff 
+
+
+@mixin sh()
+    box-shadow: 0 0.1px 3px 0 $colorUIM
+@mixin WH($w,$h)
+    width: $w
+    height: $h
+
+body   
+    font-size: smaller
+    font-family: 'dubai'
+._
+    margin: 0
+    padding: 0
+.sh 
+    box-shadow: 0 0.1px 3px 0 $colorUIM
+input  
+    padding: 10px
+    margin: 10px
+    width: 100%
+    border: 1px solid #e5e5e5
+textarea
+    height: 70px
+    padding: 10px
+    margin: 10px
+    width: 100%
+    border: 1px solid #e5e5e5

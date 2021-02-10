@@ -1,0 +1,26 @@
+{
+  "short_name": "pesktop",
+  "name": "تطبيقات اندرويد مفعلة",
+  "icons": [
+    {
+      "src": "./images/logo.png",
+      "sizes": "110x110",
+      "type": "image/png",
+      "purpose": "any maskable"
+    } ,{
+      "src": "./images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    } ,{
+      "src": "./images/logo.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    } 
+  ],"start_url": "/",
+  "background_color": "#91c8ff",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#91c8ff"
+} 

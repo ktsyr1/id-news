@@ -1,0 +1,123 @@
+
+// @media app
+@import ./QOui
+ 
+$phone : 425px
+$tablet : 640px
+$tablet2 : 750px
+$laptop : 1024px
+$desktop : 1440px
+@media screen and ( max-width: $phone ) 
+    h1 
+        font-size: initial
+    .auth
+        top: 70px
+        left: 10px
+    .Edit_app
+        width: 100%
+    nav   
+        justify-content: space-between 
+        #menu 
+            flex-direction: column
+            position: fixed
+            width: 200px
+            right: 0
+            height: 100%
+            top: 70px
+            z-index: 1
+            background-color: $colorBG  
+            box-shadow: 0 0.1px 6px 0 #91c8ff  
+            width: 200px  
+
+            &._open 
+                display: flex
+                a._
+                    display: flex
+                    img , svg
+                        margin: 15px
+                    p
+                        margin: 22px 0
+            &._exit
+                display: none 
+        .btn_menu
+            display: block
+        .search
+            display: none
+            &.open
+                width: 95% 
+                display: flex
+                position: absolute
+                z-index: 1
+                background-color: $colorBG
+    footer .min 
+        flex-direction: column
+@media screen and ( max-width: $tablet2 ) and ( min-width: $phone)
+    .auth
+        top: 70px
+        left: 10px
+    #dashboard , .page 
+        margin-top: 85px
+        ul 
+            padding-right: 5px
+            margin-top: 10px
+    footer .min 
+        flex-flow: wrap
+        flex-direction: column
+    nav
+        justify-content: space-between 
+        #menu  
+            width: 200px  
+            flex: none 
+            flex-direction: column
+            position: fixed  
+            @include sh  
+            &._open 
+                display: flex
+                a._
+                    display: flex
+                    img , svg
+                        margin: 15px
+                    p
+                        margin: 22px 0
+            &._exit
+                display: none  
+        .search 
+            &.open
+                display: flex
+                z-index: 1
+                position: absolute
+                background-color: $colorBG
+                width: 97%
+            &.exit
+                display: none
+            input:focus 
+                outline: -webkit-focus-ring-color auto 0px
+@media screen and ( min-width: $tablet2 ) 
+    section 
+        &.post
+            max-width: 500px
+            margin: 75px auto 0 auto
+    section.about
+        margin-top: 70px
+        margin-right: 40px
+    .Edit_app
+        width: 420px 
+    nav 
+        justify-content: start 
+        #menu 
+            display: flex 
+            a 
+                padding: 10px
+                & img , svg
+                    margin: 16px 10px
+                &._ 
+                    display: flex
+        .-_- ,.btn_menu
+            display: none
+        .search     
+            height: 46px
+            margin: 10px 
+            max-width: 430px
+            float: left
+        .btn_search 
+            margin-right: 400px  

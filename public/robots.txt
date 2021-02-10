@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Allow: /sitemap.xml
+Sitemap: /sitemap.xml
+Disallow: /404/
+Disallow: /contact/
+Disallow: /js/ 

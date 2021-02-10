@@ -1,0 +1,163 @@
+@import ./nav.sass
+@import ./footer.sass
+@import ./auth.sass
+@import ./QOui.sass
+
+    
+#container
+    display: none
+.btn
+    background-color: #2680eb
+    border: 0
+    padding: 10px
+    margin: 10px 
+    width: 100%
+    color: $colorBG
+
+   
+section 
+    margin-top: 75px 
+    background-color: $colorBG
+    text-align: center
+    &.post
+        text-align: right
+        a
+            color: $colorUI
+        .title 
+            display: flex
+            padding: 0 10px
+            margin: 10px
+            height: auto
+            flex-flow: wrap
+            @include sh  
+            p, a, span 
+                padding: 10px 5px
+            p 
+                margin: 0px
+        .content
+            @include sh  
+            margin: 10px
+            padding: 10px
+            h1 
+                padding: 0 0 10px 10px
+            img 
+                width: 100%
+                margin: 10px 0
+        div.about
+            @include sh  
+            display: flex 
+            padding: 10px
+            margin: 10px
+            justify-content: space-between
+            .tags ,.cats
+                display: flex 
+                .item a   
+                    padding: 10px                   
+                    color: $colorUI
+        .author      
+            @include sh  
+            padding: 10px
+            margin: 10px
+            display: flex
+                
+    ._404 
+        width: 80%
+        margin: auto 
+        .__404 
+            width: 30%
+    .cards 
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        .card 
+            width: 300px
+            text-align: start
+            margin: 10px
+            border-radius: 10px 
+            @include sh  
+            img 
+                max:
+                    width: 300px
+                    height: 190px
+                @include WH(300px,auto)
+                border-radius: 10px 10px 0px 0px
+            .cats  
+                display: flex 
+                margin: -40px 0
+                position: absolute 
+                .cat 
+                    padding: 5px
+                    @include sh
+                    margin: 5px
+                    color: #fff
+                    border-radius: 5px
+                    background-color: #1492E6
+                
+            .title
+                padding: 10px
+            p.name 
+                padding: 10px
+                font-size: 12px
+    
+    &.about
+        @include sh 
+        // display: flex
+        width: 95%
+        padding: 10px 
+        
+        .package
+            display: flex
+            text-align: right
+            p
+                padding: 0 5px
+                overflow-wrap: anywhere
+        .url
+            a
+                @include sh 
+                padding: 2px
+                display: flex
+                width: fit-content
+    .contect 
+        display: flex
+        width: fit-content
+        margin: 0 auto
+        flex-direction: column
+        ._ 
+            img 
+                width: 320px
+        form 
+            width: 90%
+            div 
+                width: 100%
+                display: flex
+                input  , textarea
+                    padding: 10px
+                    margin: 10px
+                    width: 100%
+                    border: 1px solid #e5e5e5
+            &:nth-child(1) input
+                width: 100%
+     
+section.about  
+    margin-top: 70px
+    .cards .card
+        width: 200px
+        padding: 5px
+        text-align: center
+    img 
+        width: 275px
+        height: 204px
+    article
+        display: grid
+        text-align: right
+        padding: 30px
+        b , h1  
+            margin: 10px
+.open_b
+    display: block
+.open
+    display: flex
+.exit
+    display: none
+// :nth-child
+

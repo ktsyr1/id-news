@@ -1,0 +1,33 @@
+{
+  "name": "id-news",
+  "name_ar": "ايدي نيوز",
+  "version": "0.1.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ktsyr1/id-dl.git"
+  },
+  "engines": {
+    "node": "12.19.0"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "next build && next export"
+  },
+  "dependencies": {
+    "axios": "^0.21.0",
+    "dompurify": "^2.2.6",
+    "next": "10.0.0",
+    "noto-sans-arabic": "^1.0.2",
+    "nprogress": "^0.2.0",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "sass": "^1.32.5"
+  },
+  "cacheDirectories": [
+    "node_modules/",
+    ".next/cache/"
+  ]
+}

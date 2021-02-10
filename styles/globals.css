@@ -1,0 +1,35 @@
+html,
+body,* {
+  padding: 0;
+  margin: 0;
+  direction: rtl;
+  font-family: "Noto Sans Arabic", sans-serif;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+* {
+  box-sizing: border-box;
+}
+.page {
+  margin: auto 0;
+  text-align: center;
+}
+a._card {
+  display: inherit;
+  width: 333px;
+  box-shadow: 0 0.1px 3px 0 #91c8ff;
+  margin: 10px;
+  max-height: 150px;
+}
+a._card div {
+  text-align: initial;
+  margin: 10px;
+}
+a._card img {
+  max-width: 150px;
+  height: fit-content;
+  max-height: 150px;
+  margin: auto 0;
+} 
