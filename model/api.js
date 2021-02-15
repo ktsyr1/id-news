@@ -23,56 +23,42 @@ export const GET_Array = async (query, re, filters) => {
 	let filter = filters ? "?_fields=" + filters : ''
 	let array = []
 	await Promise.all(
-		await re.map(async id => { 
+		await re.map(async id => {
 			let res = await GET(query, id + filter)
 			array.push(res)
 		})
 	)
 	return array
 }
-export const map = (arr) => {
-	let new_arr = []
-	arr.map(_res => {
-		let { name, slug, id, count, description } = _res
-		new_arr.push({
-			name: name,
-			slug: slug,
-			id: id,
-			description: description,
-			count: count,
+export const Posts = async (url) => { 
+	let data = await GET(url)
+	let new_data = []
+	await Promise.all(
+		data.map(async (post) => {
+			let date = post.date.split('T')
+			let img_card = await GET('/media?parent=', post.id)
+			let categories = await GET_Array('/categories/', post.categories, 'name,slug,id,count')
+			let cat = []
+			categories.map(_res => {
+				let { name } = _res
+				cat.push({ name: name })
+			})
+			let res_data = {
+				id: post.id,
+				title: post.title.rendered,
+				date: {
+					history: date[0],
+					time: date[1]
+				},
+				image: img_card[0].source_url,
+				categories: cat
+
+			}
+			new_data.push(res_data)
 		})
-	})
-	return new_arr
-}
-export const Post = async (post) => {
-
-	let category = map(categories)
-
-	let tag = map(tags)
-
-	let img_card = await axios.get(post._links['wp:attachment'][0].href)
-	let date = post.date.split('T')
-
-	let arr = {
-		id: post.id,
-		title: post.title.rendered,
-		date: {
-			history: date[0],
-			time: date[1]
-		},
-		image: img_card.data[0].source_url,
-		categories: category,
-		tags: tag,
-		author: {
-			name: authors.name,
-			website: authors.url,
-			description: authors.description,
-			image: authors.avatar_urls
-		},
-		content: post.content.rendered
-
-	}
-	return arr
+		)
+		new_data.sort(dynamicSort("id"))
+	return new_data
 }
 export function dynamicSort(property) {
 	var sortOrder = 1;

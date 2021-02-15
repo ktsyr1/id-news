@@ -3,7 +3,7 @@ import Nav from "../Component/nav/nav";
 import Card from "../Component/card";
 import axios from "axios";
 import Title from "../Component/title";
-import { host } from "../config.json";
+import { host } from "../config.json";  
 
 export default function Home({ props }) {
   return (
@@ -17,7 +17,6 @@ export default function Home({ props }) {
           })}
 
         </div>
-
       </section>
     </>
   );

@@ -5,12 +5,12 @@ import Title from "../../Component/title";
 import { host } from "../../config.json";
 import { sanitize } from '../../model/api'
 import Link from 'next/link'
-export default function Home({ props }) {
+export default function Post({ props }) {
     let { title, content, date, image, author, tags, categories } = props
 
     return (
         <>
-            <Head home="ID NEWS" />
+            <Head home="ID NEWS " />
             <Nav />
             <section className='post'>
                 <div className='title' >
@@ -36,21 +36,26 @@ export default function Home({ props }) {
                 </div>
                 <div className='about'>
                     <div className='cats'>
-                        <p>الوسوم</p>
+                        <p>التصنيفات</p>
                         {categories.map((cat, index) => {
                             return (
                                 <div key={index} className='item'>
-                                    <a href={'/cat/' + cat.id} >{cat.name}</a>
+                                    <Link href={'/cat/' + cat.id} >
+                                        <a>{cat.name}</a>
+                                    </Link>
+
                                 </div>
                             )
                         })}
                     </div>
                     <div className='tags'>
-                        <p>التصنيفات</p>
+                        <p>الوسوم</p>
                         {tags.map((cat, index) => {
                             return (
                                 <div key={index} className='item'>
-                                    <a href={'/tags/' + cat.id} >{cat.name}</a>
+                                    <Link href={'/tags/' + cat.id}>
+                                        <a  >{cat.name}</a>
+                                    </Link>
                                 </div>
                             )
                         })}
@@ -60,7 +65,7 @@ export default function Home({ props }) {
                     <img src={author.image['96']} />
                     <div >
                         <strong>{author.name} </strong>
-                        <div dangerouslySetInnerHTML={{ __html: sanitize(author.description) }} c />
+                        <div dangerouslySetInnerHTML={{ __html: sanitize(author.description) }} />
                         <a href={author.website}>{author.website.split('/')[2]}</a>
                     </div>
                 </div>
@@ -68,7 +73,7 @@ export default function Home({ props }) {
         </>
     );
 }
-Home.getInitialProps = async (ctx) => {
+Post.getInitialProps = async (ctx) => {
     let { query } = ctx
     let url = host + "/api/posts/" + query.id
     let res = await axios.get(url, query)

@@ -8,16 +8,7 @@ export function Menu() {
                     <p>الرئيسية</p>
                 </a>
             </Link> 
-            <Link className='nav_menu_link' href='/contact' >
-                <a className='nav_menu_link '> 
-                    <p>اتصل بنا</p>
-                </a>
-            </Link>
-            <Link className='nav_menu_link' href='/about' >
-                <a className='nav_menu_link '> 
-                    <p>حول الموقع</p>
-                </a>
-            </Link> 
+           
         </div>
     )
 }

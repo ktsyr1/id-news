@@ -4,7 +4,7 @@ footer
     transition: all 0.3s ease
     background: $colorBG
     border-radius: 5px
-    color: #2680eb
+    color: #333333
     margin-top: 20px
     padding-top: 30px
     padding-bottom: 0 
@@ -14,6 +14,9 @@ footer
     .min  
         display: flex
         justify-content: space-evenly 
+        img
+            width: 200px
+            height: 200px
         ul 
             list-style-type: none
             li 
@@ -21,6 +24,7 @@ footer
     .©
         text-align: center
         padding: 18px 0 18px 0px
-        background: #21282a
+        background: #fff
         width: 100%
         margin-top: 13px
+        @include sh 

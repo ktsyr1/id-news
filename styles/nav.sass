@@ -25,8 +25,12 @@ nav
     height: 65px
     top: 0
     z-index: 1
-    position: absolute
+    position: fixed
     @include sh 
+    a .icon_full
+        margin: 13px
+        width: 40px
+        height: 40px
     .btn_menu
         border-radius: 10px
         padding: 3px
@@ -49,6 +53,7 @@ nav
             p 
                 margin: 14px 0
                 font-size: large
+                padding-right: 10px
             img , svg
                 width: 30px
                 height: 30px
@@ -63,6 +68,15 @@ nav
         margin: 10px  
         input
             margin: 3px
+        .live 
+            position: fixed
+            top: 70px
+            width: 100%
+            background-color: #fff
+            padding: 10px
+            li 
+                padding: 10px
+                list-style-type: none      
     .icon
         padding: 10px
         width:  40px
