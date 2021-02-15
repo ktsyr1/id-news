@@ -1,6 +1,6 @@
 {
     "host_api":"https://ktsyr1.000webhostapp.com/wp-json/wp/v2",
-    "host":"http://localhost:3000",
+    "host":"http://id-news.netlify.app",
     "servar":"https://id-dl.herokuapp.com",
     "localhost": "http://127.0.0.1:5050"
 }
