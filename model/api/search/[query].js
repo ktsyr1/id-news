@@ -1,9 +1,9 @@
 
 import { Post, dynamicSort, GET, GET_Array } from '../../../model/api'
-export default async (req, res) => { 
+const search = async(query) => { 
     let data = await GET(
         '/posts?search=' +
-        encodeURIComponent(req.query.query),
+        encodeURIComponent(query),
         "&_fields=id,date,title,categories,"
     )
     let new_data = []
@@ -32,8 +32,10 @@ export default async (req, res) => {
         })
     )
     new_data.sort(dynamicSort("id"))
-    res.statusCode = 200
-    res.setHeader('Content-Type', 'application/json')
-    res.send(JSON.stringify(new_data))
+    return new_data
+    // res.statusCode = 200
+    // res.setHeader('Content-Type', 'application/json')
+    // res.send(JSON.stringify(new_data))
 
 } 
+export default search

@@ -14,7 +14,8 @@ export const sanitize = (content) => {
 }
 export const GET = async (query, id, filters) => {
 	let filter = filters ? "?_fields=" + filters : ''
-	let url = host_api + query + id +filter 
+	let _id = id ? id : '' 
+	let url = host_api + query + _id + filter
 	let authors = await axios.get(url)
 	return authors.data
 }
@@ -56,8 +57,8 @@ export const Posts = async (url) => {
 			}
 			new_data.push(res_data)
 		})
-		)
-		new_data.sort(dynamicSort("id"))
+	)
+	new_data.sort(dynamicSort("id"))
 	return new_data
 }
 export function dynamicSort(property) {

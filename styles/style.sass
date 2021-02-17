@@ -3,33 +3,31 @@
 @import ./auth.sass
 @import ./QOui.sass
 
-    
 #container
     display: none
 .btn
     background-color: #2680eb
     border: 0
     padding: 10px
-    margin: 10px 
+    margin: 10px
     width: 100%
     color: $colorBG
 
-   
-section 
-    margin-top: 75px 
+section
+    margin-top: 75px
     background-color: $colorBG
     text-align: center
     &.result
-        @include sh 
+        @include sh
         text-align: right
         padding: 10px
         height: auto
         margin: 75px 10px 10px 10px
         min-height: 300px
-        a 
+        a
             display: flex
             padding: 5px
-        p 
+        p
             padding: 5px
             max-width: 95%
             white-space: nowrap
@@ -39,108 +37,116 @@ section
         text-align: right
         a
             color: $colorUI
-        .title 
+        .title
             display: flex
-            padding: 0 10px
-            margin: 10px
             height: auto
+            margin: 10px
+            padding: 0 15px
             flex-flow: wrap
-            @include sh  
-            p, a, span 
+            @include sh
+            p, a, span
                 padding: 10px 5px
-            p 
+            p
                 margin: 0px
         .content
-            @include sh  
+            @include sh
             margin: 10px
             padding: 10px
-            h1 
+            h1
                 padding: 0 0 10px 10px
-            img 
+            img
                 width: 100%
                 margin: 10px 0
+            .time
+                display: flex
+                height: auto
+                flex-flow: wrap
+                // @include sh  
+                img.icon
+                    width: 15px
+                    margin: 0 5px
         div.about
-            @include sh  
-            display: flex 
+            @include sh
+            display: flex
             padding: 10px
             margin: 10px
             justify-content: space-between
             .tags ,.cats
-                display: flex 
-                .item a   
-                    padding: 10px                   
+                display: flex
+                .item a
+                    padding: 10px
                     color: $colorUI
-        .author      
-            @include sh  
+        .author
+            @include sh
             padding: 10px
             margin: 10px
             display: flex
-    .Title_about     
-        @include sh  
+    .Title_about
+        @include sh
         text-align: right
         padding: 10px
         margin: 10px
-        h1, p 
+        h1, p
             padding: 5px
-    ._404 
+    ._404
         width: 80%
-        margin: auto 
-        .__404 
+        margin: auto
+        .__404
             width: 30%
-    .cards 
+    .cards
         display: flex
         flex-wrap: wrap
         justify-content: center
-        .card 
+        .card
             width: 300px
             text-align: start
             margin: 10px
-            border-radius: 10px 
-            @include sh  
-            .image 
+            border-radius: 10px
+            @include sh
+            .image
                 max:
                     width: 300px
                     height: 190px
                 @include WH(300px,auto)
                 border-radius: 10px 10px 0px 0px
-            .cats  
-                display: flex 
+            .cats
+                display: flex
                 margin: -40px 0
-                position: absolute 
-                .cat 
+                position: absolute
+                .cat
                     padding: 5px
                     @include sh
                     margin: 5px
                     color: #fff
                     border-radius: 5px
                     background-color: #1492E6
-                
+
             .title
                 padding: 10px
                 .icon
-                    margin: -3px  2px
-            p.name 
+                    margin: -3px 2px
+            p.name
                 padding: 10px
                 font-size: 12px
-    .pages 
+    .pages
         display: flex
         justify-content: center
         text-align: center
         flex-direction: row
-        a 
-            width:  41px
+        a
+            width: 41px
             margin: 10px
             padding: 8px 10px
             // background-color: #2680EB 
             // color: #fff
-            box-shadow: 0 1px 6px -3px #2680EB 
+            box-shadow: 0 1px 6px -3px #2680EB
             border-radius: 20px
     &.about
-        @include sh 
+        @include sh
         // display: flex
         width: 95%
-        padding: 10px 
-        
+        padding: 10px
+
         .package
             display: flex
             text-align: right
@@ -149,21 +155,21 @@ section
                 overflow-wrap: anywhere
         .url
             a
-                @include sh 
+                @include sh
                 padding: 2px
                 display: flex
                 width: fit-content
-    .contect 
+    .contect
         display: flex
         width: fit-content
         margin: 0 auto
         flex-direction: column
-        ._ 
-            img 
+        ._
+            img
                 width: 320px
-        form 
+        form
             width: 90%
-            div 
+            div
                 width: 100%
                 display: flex
                 input  , textarea
@@ -173,21 +179,21 @@ section
                     border: 1px solid #e5e5e5
             &:nth-child(1) input
                 width: 100%
-     
-section.about  
+
+section.about
     margin-top: 70px
     .cards .card
         width: 200px
         padding: 5px
         text-align: center
-    img 
+    img
         width: 275px
         height: 204px
     article
         display: grid
         text-align: right
         padding: 30px
-        b , h1  
+        b , h1
             margin: 10px
 .open_b
     display: block
@@ -196,4 +202,3 @@ section.about
 .exit
     display: none
 // :nth-child
-

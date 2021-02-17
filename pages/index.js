@@ -1,10 +1,7 @@
 import Head from "../Component/head";
 import Nav from "../Component/nav/nav";
-import Card from "../Component/card";
-import axios from "axios";
-import Title from "../Component/title";
-import { host } from "../config.json";  
-
+import Card from "../Component/card"; 
+import Data from '../model/api/posts/index'
 export default function Home({ props }) {
   return (
     <>
@@ -22,7 +19,6 @@ export default function Home({ props }) {
   );
 }
 Home.getInitialProps = async () => {
-  let url = host + "/api/posts"
-  let res = await axios.get(url)
-  return { props: res.data, revalidate: 1 };
+  let res = await Data()
+  return { props: res, revalidate: 1 };
 };

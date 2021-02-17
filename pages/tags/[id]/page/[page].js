@@ -3,14 +3,14 @@ import Nav from "../../../../Component/nav/nav";
 import axios from "axios";
 import { host, host_api } from "../../../../config.json";
 import Card from "../../../../Component/card";
-import Link from 'next/link'
+import tags from '../../../../model/api/tags/[id]'
 import { useRouter } from "next/router"
 import Pagination from '../../../../Component/pagination'
-export default function Home({ props }) { 
+export default function Home({ props }) {
     const { query } = useRouter()
     let { taxonomy, name, count, description } = props.cat
     let type = taxonomy != 'tags' ? 'قسم ' : "وسم "
-    let length = count > 10 ? " الصفحة "+query.page : ''
+    let length = count > 10 ? " الصفحة " + query.page : ''
     description = description.length > 1 ? description : 'لايوجد وصف'
 
     return (
@@ -37,18 +37,17 @@ export default function Home({ props }) {
                     url={`/tags/`}
                     search={query.id}
                     file='/tags/[id]/page/[page]'
-                    page={1 }
-                    count={Math.ceil(count /10)} />
+                    page={1}
+                    count={Math.ceil(count / 10)} />
             </section>
         </>
     );
 }
 Home.getInitialProps = async (ctx) => {
     let { query } = ctx
-    let page = query.page ? query.page : 1
-    let url = host + "/api/tags/" + query.id + '&page=' + page
-    let cat_url = host_api + '/tags/' + query.id + '?_fields=name,slug,id,count,description,taxonomy'
-    let post = await axios.get(url, query)
-    let cat = await axios.get(cat_url)
-    return { props: { post: post.data, cat: cat.data }, revalidate: 1 };
+    let page = query.page ? query.page : 1 
+    let tag_url = host_api + '/tags/' + query.id + '?_fields=name,slug,id,count,description,taxonomy'
+    let post = await tags(query.id,page)
+    let tag = await axios.get(tag_url)
+    return { props: { post: post.data, tag: tag.data }, revalidate: 1 };
 };

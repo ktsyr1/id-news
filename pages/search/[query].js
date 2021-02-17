@@ -1,13 +1,12 @@
 import Head from "../../Component/head";
-import Nav from "../../Component/nav/nav";
-import axios from "axios";
-import { host, host_api } from "../../config.json";
+import Nav from "../../Component/nav/nav"; 
 import Card from "../../Component/card";
-import Link from 'next/link'
+import Data from '../../model/api/search/[query]'
 import { useRouter } from "next/router"
 import Pagination from '../../Component/pagination'
 export default function Home({ props }) {
-    const { query } = useRouter() 
+    console.log(props);
+    const { query } = useRouter()
     return (
         <>
             <Head home="ID NEWS" />
@@ -37,8 +36,9 @@ export default function Home({ props }) {
 Home.getInitialProps = async ({ query }) => {
     let data
     try {
-        let res = await axios.get('http://localhost:3000/api/search/' +encodeURIComponent(query.query) )
-        data = res.data
+        let res = await Data(encodeURIComponent(query.query))
+        console.log(res);
+        data = res
     } catch (error) {
         console.log(error);
     }

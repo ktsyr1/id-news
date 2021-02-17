@@ -1,8 +1,8 @@
 
 import { GET, GET_Array } from '../../../model/api'
 
-export default async (req, res) => {
-    let post = await GET("/posts/", req.query.id, "author,id,title,date,content,tags,categories")
+const post = async (query) => {
+    let post = await GET("/posts/", query, "author,id,title,date,content,tags,categories")
     let img_card = await GET('/media?parent=', post.id)
     let authors = await GET('/users/', post.author)
     let categories = await GET_Array('/categories/', post.categories, 'name,slug,id,count,description')
@@ -20,7 +20,7 @@ export default async (req, res) => {
             count: count,
         })
     })
-    
+
     let tag = []
     tags.map(_res => {
         let { name, slug, id, count, description } = _res
@@ -50,8 +50,11 @@ export default async (req, res) => {
         categories: cat,
         tags: tag
     }
-    res.statusCode = 200
-    res.setHeader('Content-Type', 'application/json')
-    res.send(JSON.stringify(data))
+    // res.statusCode = 200
+    // res.setHeader('Content-Type', 'application/json')
+    // res.send(JSON.stringify(data))
 
-} 
+    return data
+}
+
+export default post

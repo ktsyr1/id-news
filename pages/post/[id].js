@@ -1,8 +1,6 @@
 import Head from "../../Component/head";
-import Nav from "../../Component/nav/nav";
-import axios from "axios";
-import Title from "../../Component/title";
-import { host } from "../../config.json";
+import Nav from "../../Component/nav/nav"; 
+import post from "../../model/api/posts/[id]"; 
 import { sanitize } from '../../model/api'
 import Link from 'next/link'
 export default function Post({ props }) {
@@ -27,8 +25,12 @@ export default function Post({ props }) {
                 </div>
                 <div className='content'>
                     <h1>{title}</h1>
-                    <span>{date.history} </span>
-                    <span>{date.time.slice(0, 5)} </span>
+                    <div className='time'>
+                        <img src='/images/history.svg' alt='icon' className='icon' width='15px' />
+                        <span> {date.history} </span>
+                        <img src='/images/time.svg' alt='icon' className='icon' width='15px' />
+                        <span>{date.time.slice(0, 5)} </span> 
+                    </div>
                     <img src={image} alt={'Image' + title} />
                     <div
                         dangerouslySetInnerHTML={{ __html: sanitize(content) }} />
@@ -73,9 +75,7 @@ export default function Post({ props }) {
         </>
     );
 }
-Post.getInitialProps = async (ctx) => {
-    let { query } = ctx
-    let url = host + "/api/posts/" + query.id
-    let res = await axios.get(url, query)
-    return { props: res.data, revalidate: 1 };
+Post.getInitialProps = async ({ query }) => {
+    let res = await post(query.id)
+    return { props: res, revalidate: 1 };
 };
