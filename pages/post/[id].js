@@ -8,7 +8,7 @@ export default function Post({ props }) {
 
     return (
         <>
-            <Head home="ID NEWS " />
+            <Head home="ID NEWS " app={props} />
             <Nav />
             <section className='post'>
                 <div className='title' >

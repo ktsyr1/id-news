@@ -8,20 +8,16 @@ export default function Head(props) {
     let title, image, ends, mods = ''
     let description, des_fb
     if (app) {
-        let { name, mod, version, icon } = app
-        mod.map(mod => {
-            mods = ' ' + mods + mod + ' '
-        })
-        title = p + name + " v" + version + mods + end
-        let description_end = ', ....تحميل مجاني برابط مباشر '
-        description = app.about.slice(0, 150 - description_end.length) + description_end
-        des_fb = "تحميل تطبيق " + name + ' v' + version + mods + ' مجانا برابط مباشر '
-        image = icon.replace('-rw', '')
+        let { } = app
+        let description_end = '  - id-news'
+        title = props.app.title + description_end
+        description = props.app.title + description_end
+        image = props.image
     } else {
         title = home ? home : page ? p + page : ''
-        image = props.image ? props.image : 'https://pesktop.com/css/img/goimg.jpg'
+        image = props.image ? props.image : '/images/bg.png'
         ends = end ? end : ''
-        description = 'تحميل جميع برامج الويندوز والأندرويد والماك والأنظمة مع الكراكات بروابط مباشرة وسريعة وتدعم الأستكمال مع امكانية تحميل الكراكات منفصلة لكل البرامج'
+        description = 'منصة إعلامية مستقلة ، تأسست في 2021 لنشر اخبار العالم بمصداقية'
 
     }
     // let ga
@@ -38,7 +34,7 @@ export default function Head(props) {
                 <meta charset="UTF-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <title> {title} {ends}</title>
-                {/* <meta name="description" content={description} /> */}
+                <meta name="description" content={description} />
                 <meta name="theme-color" content="#ffffff" />
                 {/* <meta name="keywords" content={props.keywords} /> */}
 
@@ -77,7 +73,7 @@ export default function Head(props) {
                 <meta name="twitter:image:src" content={image} />
                 <meta name="twitter:domain" content="PeskTop بيسك توب" />
 
-                <script async src="https://www.googletagmanager.com/gtag/js?id=G-G1FP7Y6LHY"></script> */}  
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-G1FP7Y6LHY"></script> */}
                 {/* <script dangerouslySetInnerHTML={
     { __html: `
                     if (typeof window != 'undefined')
