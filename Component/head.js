@@ -51,7 +51,7 @@ export default function Head(props) {
                 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
                 <link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
 
-                <meta name="author" content="https://pesktop.com/" />
+                <meta name="author" content="https://id-news.vercel.app/" />
 
                 {/* google */}
                 {/* <meta property="og:locale" content="ar_AR" />
