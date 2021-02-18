@@ -2,7 +2,7 @@ import Head from '../Component/head.js'
 import Nav from '../Component/nav/nav.js'
 import axios from 'axios'
 import React, { useState } from 'react'; 
-import { host} from '../config.json'
+// import { host} from '../config.json'
 
 export default function Contact() {
     const [name, setName] = useState('');
@@ -23,8 +23,8 @@ export default function Contact() {
             body: body,
         }
         document.querySelector('form .btn').classList.add("exit")
-        axios.post(host + '/api/v1.0/contact', data)
-            .then(res => console.log(res))
+        // axios.post(host + '/api/v1.0/contact', data)
+        //    .then(res => console.log(res))
     }
 
 
