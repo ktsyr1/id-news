@@ -15,7 +15,7 @@ export const sanitize = (content) => {
 export const GET = async (query, id, filters) => {
 	let filter = filters ? "?_fields=" + filters : ''
 	let _id = id ? id : '' 
-	let url = host_api + query + _id + filter
+	let url = host_api + query + _id + filter 
 	let authors = await axios.get(url)
 	return authors.data
 }
