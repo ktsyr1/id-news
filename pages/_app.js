@@ -1,4 +1,4 @@
-import '../styles/globals.css'  
+
 import '../styles/style.sass'
 import '../styles/responsive.sass'
 import "noto-sans-arabic/css/400.css";
