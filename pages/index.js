@@ -4,7 +4,7 @@ import Card from "../Component/card";
 import Data from '../model/api/posts/index'
 export default function Home({ props }) {
   return (
-    <>
+    <>  
       <Head home="ID NEWS" />
       <Nav />
       <section>
